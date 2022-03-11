@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+require ('')
 const connection = {};
 
 async function connect() {
@@ -18,7 +18,7 @@ async function connect() {
   const db = await mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // serverApi: ServerApiVersion.v1
+    serverApi: ServerApiVersion.v1
     // useCreateIndex: true,
   });
   console.log('new connection');
