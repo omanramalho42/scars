@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-require ('')
+
 const connection = {};
 
 async function connect() {
@@ -18,9 +18,11 @@ async function connect() {
   const db = await mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverApi: ServerApiVersion.v1
+    // serverApi: ServerApiVersion.v1
     // useCreateIndex: true,
-  });
+  });/*.then(() => app.listen(proccess.env.PORT || 5000, 
+    () => console.log(`Server running on port ${process.env.PORT}`))
+  ).catch((error) => console.log(error.message))*/
   console.log('new connection');
   connection.isConnected = db.connections[0].readyState;
 }
